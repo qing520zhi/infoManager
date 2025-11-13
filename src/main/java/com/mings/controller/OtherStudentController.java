@@ -11,18 +11,19 @@ import java.util.Scanner;
  * @author: mings
  * @create: 2025-11-05 10:10
  **/
-public class StudentController extends BaseStudentController {
+public class OtherStudentController extends BaseStudentController {
 
 	Scanner scanner = new Scanner(System.in);
 	private StudentService studentService = new StudentService();
 
 	@Override
 	public Student setStudent(String id, String name, int age, String birthday) {
-		Student student = new Student();
-		student.setId(id);
+		Student student = new Student(id, name, age, birthday);
+
+		/*student.setId(id);
 		student.setName(name);
 		student.setAge(age);
-		student.setBirthday(birthday);
+		student.setBirthday(birthday);*/
 		return student;
 	}
 }

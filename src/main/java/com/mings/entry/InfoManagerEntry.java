@@ -1,6 +1,6 @@
 package com.mings.entry;
 
-import com.mings.controller.StudentController;
+import com.mings.controller.OtherStudentController;
 import com.mings.controller.TeacherController;
 
 import java.util.Scanner;
@@ -22,7 +22,7 @@ public class InfoManagerEntry {
 			switch (choice) {
 				case 1:
 					//System.out.println("进入学生管理系统");
-					StudentController studentController = new StudentController();
+					OtherStudentController studentController = new OtherStudentController();
 					studentController.start();
 					break;
 				case 2:
