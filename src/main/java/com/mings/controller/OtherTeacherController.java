@@ -11,17 +11,13 @@ import java.util.Scanner;
  * @author: mings
  * @create: 2025-11-05 21:02
  **/
-public class TeacherController extends BaseTeacherController {
+public class OtherTeacherController extends BaseTeacherController {
 
 	Scanner scanner = new Scanner(System.in);
 	private TeacherService teacherService = new TeacherService();
 
 	public Teacher setTeacher(String id, String name, int age, String birthday) {
-		Teacher teacher = new Teacher();
-		teacher.setId(id);
-		teacher.setName(name);
-		teacher.setAge(age);
-		teacher.setBirthday(birthday);
+		Teacher teacher = new Teacher(id, name, age, birthday);
 		return teacher;
 	}
 

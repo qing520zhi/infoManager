@@ -11,17 +11,15 @@ import java.util.Scanner;
  * @author: mings
  * @create: 2025-11-05 10:10
  **/
-public class BaseStudentController {
+public abstract class BaseStudentController {
 
 	Scanner scanner = new Scanner(System.in);
 	private StudentService studentService = new StudentService();
 
 	//父类的setStudent方法
-	public Student setStudent(String id, String name, int age, String birthday) {
-		return null;
-	}
+	public abstract Student setStudent(String id, String name, int age, String birthday);
 
-	public void start() {
+	public final void start() {
 
 		studentLoop:
 		while (true) {
@@ -54,7 +52,7 @@ public class BaseStudentController {
 		}
 	}
 
-	private void updateStudent() {
+	private final void updateStudent() {
 		Student[] students = studentService.findAllStudent();
 		if (students == null) {
 			System.out.println("没有学生信息，请先添加学生");
@@ -82,7 +80,7 @@ public class BaseStudentController {
 		}
 	}
 
-	private int getAge() {
+	private final int getAge() {
 		int age;
 		while (true) {
 			System.out.println("请输入学生年龄:");
@@ -96,7 +94,7 @@ public class BaseStudentController {
 		return age;
 	}
 
-	private void deleteStudentById() {
+	private final void deleteStudentById() {
 		//1、调用service方法，获取所有学生信息
 		Student[] students = studentService.findAllStudent();
 		//2、判断数组是否为空
@@ -119,7 +117,7 @@ public class BaseStudentController {
 		}
 	}
 
-	private void findAllStudent() {
+	private final void findAllStudent() {
 
 		//1、调用service方法，获取所有学生信息
 		Student[] students = studentService.findAllStudent();
@@ -129,16 +127,16 @@ public class BaseStudentController {
 			return;
 		}
 		//3、遍历数组，打印所有学生信息
-		System.out.println("学号\t姓名\t年龄\t生日");
+		System.out.println("学号\t\t\t姓名\t\t年龄\t\t生日");
 		for (int i = 0; i < students.length; i++) {
 			Student stu = students[i];
 			if (stu != null) {
-				System.out.println(stu.getId() + "\t" + stu.getName() + "\t" + stu.getAge() + "\t\t" + stu.getBirthday());
+				System.out.println(stu.getId() + "\t" + stu.getName() + "\t\t" + stu.getAge() + "\t\t" + stu.getBirthday());
 			}
 		}
 	}
 
-	private void addStudent() {
+	private final void addStudent() {
 		//定义id变量，用于接收用户输入的学生id
 		String id;
 		while (true) {

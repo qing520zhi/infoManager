@@ -1,6 +1,6 @@
 package com.mings.service;
 
-import com.mings.dao.StudentDao;
+import com.mings.dao.OtherStudentDao;
 import com.mings.domain.Student;
 
 /**
@@ -11,7 +11,7 @@ import com.mings.domain.Student;
  **/
 public class StudentService {
 
-	private StudentDao studentDao = new StudentDao();
+	private OtherStudentDao studentDao = new OtherStudentDao();
 
 	public boolean addStudent(Student student) {
 		return studentDao.addStudent(student);

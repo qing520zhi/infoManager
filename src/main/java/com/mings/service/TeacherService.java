@@ -1,6 +1,6 @@
 package com.mings.service;
 
-import com.mings.dao.TeacherDao;
+import com.mings.dao.OtherTeacherDao;
 import com.mings.domain.Teacher;
 
 /**
@@ -11,7 +11,7 @@ import com.mings.domain.Teacher;
  **/
 public class TeacherService {
 
-	private TeacherDao teacherDao = new TeacherDao();
+	private OtherTeacherDao teacherDao = new OtherTeacherDao();
 
 	public Boolean isExist(String id) {
 		return teacherDao.isExist(id);
