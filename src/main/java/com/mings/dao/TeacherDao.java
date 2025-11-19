@@ -8,7 +8,7 @@ import com.mings.domain.Teacher;
  * @author: mings
  * @create: 2025-11-05 21:32
  **/
-public class TeacherDao {
+public class TeacherDao implements BaseTeacherDao {
 	private static Teacher[] teachers = new Teacher[5];
 
 	static {

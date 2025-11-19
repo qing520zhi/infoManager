@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author: mings
  * @create: 2025-11-05 21:32
  **/
-public class OtherTeacherDao {
+public class OtherTeacherDao implements BaseTeacherDao {
 	private static ArrayList<Teacher> teachers = new ArrayList<>();
 
 	static {

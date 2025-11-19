@@ -8,7 +8,7 @@ import com.mings.domain.Student;
  * @author: mings
  * @create: 2025-11-05 10:11
  **/
-public class StudentDao extends BaseStudentDao {
+public class StudentDao implements BaseStudentDao {
 
 	private static Student[] stus = new Student[5];
 
@@ -39,6 +39,18 @@ public class StudentDao extends BaseStudentDao {
 
 	public Student[] findAllStudent() {
 		return stus;
+	}
+
+	@Override
+	public int getIndex(String id) {
+		for (int i = 0; i < stus.length; i++) {
+			Student stu = stus[i];
+			if (stu != null && stu.getId().equals(id)) {
+				index = i;
+				break;
+			}
+		}
+		return index;
 	}
 
 	public void deleteStudentById(String delid) {
