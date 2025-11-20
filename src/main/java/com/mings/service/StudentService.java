@@ -1,7 +1,8 @@
 package com.mings.service;
 
-import com.mings.dao.OtherStudentDao;
+import com.mings.dao.BaseStudentDao;
 import com.mings.domain.Student;
+import com.mings.factory.BaseStudentDaoFactory;
 
 /**
  * @program: infoManager
@@ -11,7 +12,9 @@ import com.mings.domain.Student;
  **/
 public class StudentService {
 
-	private OtherStudentDao studentDao = new OtherStudentDao();
+	//private OtherStudentDao studentDao = new OtherStudentDao();
+	//通过工厂类获取dao对象
+	private BaseStudentDao studentDao = BaseStudentDaoFactory.getStudentDao();
 
 	public boolean addStudent(Student student) {
 		return studentDao.addStudent(student);

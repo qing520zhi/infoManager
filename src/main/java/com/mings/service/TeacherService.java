@@ -1,7 +1,8 @@
 package com.mings.service;
 
-import com.mings.dao.OtherTeacherDao;
+import com.mings.dao.BaseTeacherDao;
 import com.mings.domain.Teacher;
+import com.mings.factory.BaseTeacherDaoFactory;
 
 /**
  * @program: infoManager
@@ -11,7 +12,11 @@ import com.mings.domain.Teacher;
  **/
 public class TeacherService {
 
-	private OtherTeacherDao teacherDao = new OtherTeacherDao();
+	//通过构造方法获取教师dao
+	//private OtherTeacherDao teacherDao = new OtherTeacherDao();
+	//通过工厂类获取教师dao
+	private BaseTeacherDao teacherDao = BaseTeacherDaoFactory.getTeacherDao();
+
 
 	public Boolean isExist(String id) {
 		return teacherDao.isExist(id);
